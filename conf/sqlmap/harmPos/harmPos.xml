@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+    
+<sqlMap>
+
+    <resultMap id="get-HarmToPosResult" class="com.db.entity.harmPos.TreportInfo">
+        <result column="CD_INSPTMACHI"      			property="cdInsptmachi" />
+        <result column="NO_DOCUMENT"					property="noDocument"/>
+        <result column="SEQ"							property="seq"/>
+        <result column="CD_RPTTYPE"						property="cdRpttype"/>
+        <result column="NM_RPTTYPE"      				property="nmRpttype"/>
+        <result column="NM_PROD"      					property="nmProd"/>
+        <result column="NM_PRODTYPE"      				property="nmProdtype"/>
+        <result column="BARCODE"      					property="barcode"/>
+        <result column="DT_MAKE"      					property="dtMake"/>
+        <result column="PRD_VALID"  					property="prdValid"/>
+        <result column="UNIT_PACK"  					property="unitPack"/>
+        <result column="NM_MANUFACCNTR"   				property="nmManufaccntr"/>
+        <result column="NM_MANUFACTYPE"      			property="nmManufactype"/>
+        <result column="NM_MANUFACUPSO"       			property="nmManufacupso"/>
+        <result column="TEL_MANUFACUPSO"        		property="telManufacupso"/>
+        <result column="ZIPNO_MANUFAC"       	  		property="zipnoManufac"/>
+        <result column="ADDR_MANUFAC"        			property="addrManufac"/>
+        <result column="ADDR_MANUFACDTl"       	  		property="addrManufacdtl"/>
+        <result column="NM_SALERTYPE"        		property="nmSalertype"/>
+        <result column="NM_SALERUPSO"        	property="nmSalerupso"/>
+        <result column="TEL_SALERUPSO"        	property="telSalerupso"/>
+        <result column="ZIPNO_SALER"       		property="zipnoSaler"/>
+        <result column="ADDR_SALER"      		property="addrSaler" />
+        <result column="ADDR_SALERDTl"     		property="addrSalerdtl" />
+        <result column="NM_INSPTTYPE"      		property="nmInspttype" />
+        <result column="NM_TAKEMACHI"      		property="nmTakemachi" />
+        <result column="PLC_TAKE"      			property="plcTake" />
+        <result column="DT_TAKE"      			property="dtTake" />
+        <result column="NM_EXM01ABBR"      		property="nmExm01abbr" />
+        <result column="VAL_EXM01BASE"      	property="valExm01base" />
+        <result column="VAL_EXM01RESULT"      	property="valExm01result" />
+        <result column="NM_EXM02ABBR"      		property="nmExm02abbr" />
+        <result column="VAL_EXM02BASE"      	property="valExm02base" />
+        <result column="VAL_EXM02RESULT"      	property="valExm02result" />
+        <result column="NM_EXM03ABBR"      		property="nmExm03abbr" />
+        <result column="VAL_EXM03BASE"      	property="valExm03base" />
+        <result column="VAL_EXM03RESULT"      	property="valExm03result" />
+        <result column="NM_EXM04ABBR"      		property="nmExm04abbr" />
+        <result column="VAL_EXM04BASE"      	property="valExm04base" />
+        <result column="VAL_EXM04RESULT"      	property="valExm04result" />
+        <result column="NM_EXM05ABBR"      		property="nmExm05abbr" />
+        <result column="VAL_EXM05BASE"      	property="valExm05base" />
+        <result column="VAL_EXM05RESULT"      	property="valExm05result" />
+        <result column="CD_RECREASON"      		property="cdRecreason" />
+        <result column="DTl_RECREASON"      	property="dtlRecreason" />
+        <result column="DT_REPORT"      		property="dtReport" />
+        <result column="NM_RPTRMACHI"      		property="nmRptrmachi" />
+        <result column="NM_REPORTER"      		property="nmReporter" />
+        <result column="TEL_REPORTER"      		property="telReporter" />
+        <result column="YN_OPEN"      			property="ynOpen" />
+        <result column="IMG_ATTACH01"      		property="imgAttach01" />
+        <result column="IMG_ATTACH02"      		property="imgAttach02" />
+        <result column="IMG_ATTACH03"      		property="imgAttach03" />
+        <result column="IMG_ATTACH04"      		property="imgAttach04" />
+        <result column="IMG_ATTACH05"      		property="imgAttach05" />
+        <result column="YN_OPENWEB"      		property="ynOpoenWeb" />
+        <result column="DT_RECVORG"      		property="dtRecvorg" />
+ 
+ 
+        
+    </resultMap>
+
+
+    <select id="getHarmToPos" resultMap="get-HarmToPosResult" >
+    <!--select id="getHarmToPos" resultClass="com.db.entity.harmPos.TreportInfo" -->
+    	select * from treport where rownum = 1 order by dt_recvorg desc 
+    </select>
+</sqlMap> 

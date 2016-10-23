@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<properties resource="properties/db.properties"/>
+
+	<settings 
+		cacheModelsEnabled="false"
+		enhancementEnabled="false"
+		lazyLoadingEnabled="false"
+		maxRequests="64"
+		maxSessions="20"
+		maxTransactions="10"
+		useStatementNamespaces="true"
+	/>
+
+	<transactionManager type="JDBC">
+		<dataSource type="DBCP">
+			<property name="driverClassName"   value="${driver}"  />
+			<property name="url"      value="${url}"   />
+			<property name="username"     value="${username}" />
+			<property name="password"     value="${password}" />
+			<property name="maxActive"     value="10"/>
+			<property name="initialSize"     value="1"/>
+			<property name="removeAbandoned"    value="true"/>
+			<property name="removeAbandonedTimeout"  value="60"/>
+			<property name="logAbandoned"    value="true"/>
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="sqlmap/test.xml"/>
+	<sqlMap resource="sqlmap/harmPos/harmPos.xml"/>
+</sqlMapConfig>
